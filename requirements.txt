@@ -1,4 +1,4 @@
 chardet
 requests
 urllib3
-python-nmap
+python-nmap==0.6.4
