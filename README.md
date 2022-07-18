@@ -8,5 +8,8 @@
 
 3、扫描结果会生成4个文件：domain-ip.txt、ip.txt、final_result.txt和url.txt。domain-ip.txt里面是子域名和ip的对应关系，ip.txt里面是去重后的ip地址，final_result.txt里面是去重后的端口服务扫描结果，url.txt里面是从final_result.txt里提取出来的web地址。  
 
+用python2开发的：
+usage: python masnmap.py  
+
 本程序仅供于学习交流，请使用者遵守《中华人民共和国网络安全法》，勿将此工具用于非授权的测试。
 
