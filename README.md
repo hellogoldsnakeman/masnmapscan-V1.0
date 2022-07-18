@@ -1,5 +1,5 @@
 # masnmapscan-V1.0
-程序整合了masscan和nmap两款扫描器，masscan扫描端口，nmap扫描端口对应服务，二者结合起来实现了又快又好地扫描。并且加入了针对目标资产有防火墙的应对措施。
+程序整合了masscan和nmap两款扫描器，masscan扫描端口，nmap扫描端口对应服务，二者结合起来实现了又快又好地扫描。
 
 安装说明及运行流程：  
 1、首先pip install -r requirements.txt安装所需插件。如果要扫描子域名，就将子域名保存到subdomain.txt里，放在masnmap.py同目录下；如果已经有ip地址，就将ip地址保存在ip.txt里，放在masnmap.py同目录下。  
