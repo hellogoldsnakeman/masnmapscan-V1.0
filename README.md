@@ -19,6 +19,7 @@
 
 3、扫描结果会生成4个文件：domain-ip.txt、ip.txt、final_result.txt和url.txt。domain-ip.txt里面是子域名和ip的对应关系，ip.txt里面是去重后的ip地址，final_result.txt里面是去重后的端口服务扫描结果，url.txt里面是从final_result.txt里提取出来的web地址。  
 
+### 代码还是延续了以往的简单粗暴，任意所至，没有usage提示，也没有杠这杠那的参数选项，还是之前上来就干的风格，不足之处请大家批评指正
 
 ### 用python2开发的：  
 Usage: python masnmapscan.py  
