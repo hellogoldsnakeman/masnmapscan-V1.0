@@ -19,7 +19,8 @@
 
 3、扫描结果会生成4个文件：domain-ip.txt、ip.txt、final_result.txt和url.txt。domain-ip.txt里面是子域名和ip的对应关系，ip.txt里面是去重后的ip地址，final_result.txt里面是去重后的端口服务扫描结果，url.txt里面是从final_result.txt里提取出来的web地址。  
 
-这款工具只是作为信息收集链中的一个环节，不求大而全，只求在其中某一个点能有所用处。像前述文中提到的先使用oneforall等工具收集到子域名，然后用masnmap扫描子域名对应的ip和端口，生成后的web文档可以直接投喂给dirsearch、jsfinder、Ehole等工具进行下一步扫描，希望能起到一个承上启下的作用。
+### 应用场景
+这款工具只是作为信息收集链中的一个环节，不求大而全，只求在其中某一个点能有所用处。比如先使用oneforall等工具收集到子域名，然后用masnmap扫描子域名对应的ip和端口，生成后的web文档可以直接投喂给dirsearch、jsfinder、Ehole等工具进行下一步扫描。可以起到一个承上启下的作用。
 
 ### 用python2开发的：  
 Usage: python masnmapscan.py  
