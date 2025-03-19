@@ -107,14 +107,14 @@ def Title(scan_url_port, service_name):
 # 扫描结果去重
 def Removedup():
     if os.path.exists('result.txt'):
-        for line in open('result.txt', 'rb'):
+        for line in open('result.txt', 'r'):
             if line not in final_url:
                 final_url.append(line)
                 with open('final_result.txt', 'ab+') as f:
                     f.writelines(line)
         time.sleep(1)
         os.remove('result.txt')
-        for line in open('final_result.txt', 'rb'):
+        for line in open('final_result.txt', 'r'):
             if 'Website' in line:
                 line = line.strip('\n\r\t').split('\t\t')[0].replace('[*] Website: ', '')
                 with open('url.txt', 'ab+') as f:
@@ -124,8 +124,8 @@ def Removedup():
 
 
 # 获取子域名对应ip
-def Get_domain_ip():
-    f = open(r'subdomain.txt', 'rb')
+def Get_domain_ip(sub):
+    f = open(sub, 'r')
     for line in f.readlines():
         try:
             if 'www.' in line:
@@ -143,7 +143,7 @@ def Get_domain_ip():
     time.sleep(1)
     # 对子域名解析的ip进行去重
     ip_temps = []
-    l = open(r'subdomain-ip.txt', 'rb')
+    l = open(r'subdomain-ip.txt', 'r')
     for line in l.readlines():
         line = line.strip('\n\t\r').split('\t\t')[-1]
         ips.append(line)
@@ -161,7 +161,7 @@ def Get_domain_ip():
 # 传入ip启用多线程
 def Multithreading():
     queue = Queue.Queue()
-    f = open(r'ip.txt', 'rb')
+    f = open(r'ip.txt', 'r')
     for line in f.readlines():
         final_ip = line.strip('\n')
         queue.put(final_ip)
@@ -177,12 +177,12 @@ def Multithreading():
 
 
 # 判断扫描文件是否存在，存在则直接扫描，不存在则调用域名解析
-def main():
+def main(sub):
     try:
         if os.path.exists('ip.txt'):
             Multithreading()
         else:
-            Get_domain_ip()
+            Get_domain_ip(sub)
             Multithreading()
     except Exception as e:
         print e
@@ -191,7 +191,12 @@ def main():
 
 if __name__ == '__main__':
     start_time = datetime.datetime.now()
-    main()
-    Removedup()
+    if len(sys.argv) < 2:
+        print "Usage: python "+sys.argv[0]+u" 子域名文件"
+        sys.exit(1)
+    else:
+        sub = sys.argv[1]
+        main(sub)
+        Removedup()
     spend_time = (datetime.datetime.now() - start_time).seconds
     print 'The program is running: ' + str(spend_time) + ' second'
