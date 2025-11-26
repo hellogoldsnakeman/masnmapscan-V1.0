@@ -29,7 +29,9 @@
 
 ### 使用说明：  
 python3 masnmapscan.py -h
+
 单个域名: python3 masnmapscan.py -d example.com
+
 批量域名: python3 masnmapscan.py -f domains.txt
 
 ### 代码没有延续以往的简单粗暴，任意所至，增加了部分杠这杠那的参数选项，不同于以往随心所欲，上来就干的风格，简约之下更显沉稳，不足之处请大家批评指正。  
