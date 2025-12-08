@@ -34,7 +34,7 @@ python3 masnmapscan.py -h
 
 批量域名: python3 masnmapscan.py -f domains.txt
 
-直接扫描ip：python3 masnmapscan.py --ip-file ip.txt
+直接扫描ip：python3 masnmapscan.py --skip-realip --ip-file ip.txt
 
 ### 代码没有延续以往的简单粗暴，任意所至，增加了部分杠这杠那的参数选项，不同于以往随心所欲，上来就干的风格，简约之下更显沉稳，不足之处请大家批评指正。  
 ### 本程序仅供于学习交流，请使用者遵守《中华人民共和国网络安全法》，勿将此工具用于非授权的测试。
