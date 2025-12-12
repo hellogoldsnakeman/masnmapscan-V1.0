@@ -167,7 +167,7 @@ class RealIPScanner:
         return list(found_ips)
 
     def check_domain_history(self, domain):
-        """查询域名历史解析记录（简化版）"""
+        """查询域名历史解析记录"""
         historical_ips = set()
         
         # 使用多个公共DNS查询
