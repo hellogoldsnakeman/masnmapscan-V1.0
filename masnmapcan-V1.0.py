@@ -343,10 +343,10 @@ class PortScanner:
                         temp1 = temp["ports"][0]
                         temp_ports.append(str(temp1["port"]))
 
-            if len(temp_ports) > 50:
-                temp_ports.clear()  # 如果端口数量大于50，说明可能存在防火墙，属于误报，清空列表
-            else:
-                self.ports.extend(temp_ports)  # 小于50则放到总端口列表里
+            # if len(temp_ports) > 50:
+            #     temp_ports.clear()  # 如果端口数量大于50，说明可能存在防火墙，属于误报，清空列表
+            # else:
+            #     self.ports.extend(temp_ports)  # 小于50则放到总端口列表里
 
     # 调用nmap识别服务
     def nmap_scan(self, scan_ip):
